@@ -38,6 +38,7 @@ public class FlightTicket {
 	}
 
 	public String toString() {
-		return "Passenger: "+passengerName+", ID: "+ticketID+", Class: "+classType+", Days Before Flight: "+daysBeforeFlight+", Total: "+calculateTicketPrice()+"SAR";
+		return "Passenger: " + passengerName + ", ID: " + ticketID + ", Class: " + classType + ", Days Before Flight: "
+				+ daysBeforeFlight + ", Total: " + calculateTicketPrice() + "SAR";
 	}
 }
