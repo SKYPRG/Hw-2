@@ -42,7 +42,7 @@ public class FlightTicket {
 	}
 
 	public String toString() {
-		return "Passenger: " + passengerName + ", ID: " + ticketID + ", Class: " + Character.toUpperCase(classType)
-				+ ", Days Before Flight: " + daysBeforeFlight + ", Total: " + calculateTicketPrice() + "SAR";
+		return String.format("Passenger: %s, ID: %s, Class: %c, Days Before Flight: %d, Total: %.2f SAR", passengerName,
+				ticketID, Character.toUpperCase(classType), daysBeforeFlight, calculateTicketPrice());
 	}
 }
