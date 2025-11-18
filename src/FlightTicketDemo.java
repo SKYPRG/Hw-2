@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 public class FlightTicketDemo {
 	static Scanner input = new Scanner(System.in);
-	public char classType;
 
 	static char isValidClassType(char ClassType)
 

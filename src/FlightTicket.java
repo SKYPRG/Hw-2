@@ -16,29 +16,33 @@ public class FlightTicket {
 
 	private String generateTicketID() {
 		String twoLettersClassType = null;
-		if (classType == 'E')
+		if (classType == 'E' || classType == 'e')
 			twoLettersClassType = "EC";
-		else if (classType == 'B')
+		else if (classType == 'B' || classType == 'b')
 			twoLettersClassType = "BU";
-		else if (classType == 'F')
+		else if (classType == 'F' || classType == 'f')
 			twoLettersClassType = "FI";
-		return twoLettersClassType + (passengerName.substring(passengerName.length() - 2).toUpperCase()) + numOfTickets;
+		if (passengerName.length() >= 2)
+			return twoLettersClassType + (passengerName.substring(passengerName.length() - 2).toUpperCase())
+					+ numOfTickets;
+		else
+			return twoLettersClassType + (passengerName.toUpperCase()) + numOfTickets;
 
 	}
 
 	public double calculateTicketPrice() {
 		double TicketPrice = 0.0;
-		if (classType == 'E')
+		if (classType == 'E' || classType == 'e')
 			TicketPrice = (850 + (daysBeforeFlight * 10));
-		else if (classType == 'B')
+		else if (classType == 'B' || classType == 'b')
 			TicketPrice = (1500 + (daysBeforeFlight * 15));
-		else if (classType == 'F')
+		else if (classType == 'F' || classType == 'f')
 			TicketPrice = (2500 + (daysBeforeFlight * 20));
 		return TicketPrice;
 	}
 
 	public String toString() {
-		return "Passenger: " + passengerName + ", ID: " + ticketID + ", Class: " + classType + ", Days Before Flight: "
-				+ daysBeforeFlight + ", Total: " + calculateTicketPrice() + "SAR";
+		return "Passenger: " + passengerName + ", ID: " + ticketID + ", Class: " + Character.toUpperCase(classType)
+				+ ", Days Before Flight: " + daysBeforeFlight + ", Total: " + calculateTicketPrice() + "SAR";
 	}
 }
