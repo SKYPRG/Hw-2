@@ -45,4 +45,41 @@ public class FlightTicket {
 		return String.format("Passenger: %s, ID: %s, Class: %c, Days Before Flight: %d, Total: %.2f SAR", passengerName,
 				ticketID, Character.toUpperCase(classType), daysBeforeFlight, calculateTicketPrice());
 	}
+
+	public static int getNumOfTickets() {
+		return numOfTickets;
+	}
+
+	public static void setNumOfTickets(int numOfTickets) {
+		FlightTicket.numOfTickets = numOfTickets;
+	}
+
+	public String getTicketID() {
+		return ticketID;
+	}
+
+	public void setTicketID(String ticketID) {
+		this.ticketID = ticketID;
+	}
+
+	public char getClassType() {
+		return classType;
+	}
+
+	public void setClassType(char classType) {
+		this.classType = classType;
+	}
+
+	public int getDaysBeforeFlight() {
+		return daysBeforeFlight;
+	}
+
+	public void setDaysBeforeFlight(int daysBeforeFlight) {
+		this.daysBeforeFlight = daysBeforeFlight;
+	}
+
+	public String getPassengerName() {
+		return passengerName;
+	}
+
 }
