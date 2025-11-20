@@ -5,7 +5,7 @@ public class FlightTicket {
 	private char classType; // 3 types of tickets: 'E','B','F'.
 	private int daysBeforeFlight; // The number of days remaining before the flight.
 
-	public FlightTicket(String passengerName, char classType, int daysBeforeFlight) {
+	public FlightTicket(String passengerName, char classType, int daysBeforeFlight) { // consturctor with parameters
 		this.passengerName = passengerName;
 		this.classType = classType;
 		this.daysBeforeFlight = daysBeforeFlight;
@@ -14,7 +14,7 @@ public class FlightTicket {
 
 	}
 
-	private String generateTicketID() {
+	private String generateTicketID() { // genrate ticket id
 		String twoLettersClassType = null;
 		if (classType == 'E' || classType == 'e')
 			twoLettersClassType = "EC";
@@ -22,7 +22,7 @@ public class FlightTicket {
 			twoLettersClassType = "BU";
 		else if (classType == 'F' || classType == 'f')
 			twoLettersClassType = "FI";
-		if (passengerName.length() >= 2)
+		if (passengerName.length() >= 2) // if passenger has namelength 2 or greater
 			return twoLettersClassType + (passengerName.substring(passengerName.length() - 2).toUpperCase())
 					+ numOfTickets;
 		else
@@ -30,7 +30,7 @@ public class FlightTicket {
 
 	}
 
-	public double calculateTicketPrice() {
+	public double calculateTicketPrice() { // calculate ticket price
 		double TicketPrice = 0.0;
 		if (classType == 'E' || classType == 'e')
 			TicketPrice = (850 + (daysBeforeFlight * 10));
@@ -41,7 +41,7 @@ public class FlightTicket {
 		return TicketPrice;
 	}
 
-	public String toString() {
+	public String toString() { // information of Passenger
 		return String.format("Passenger: %s, ID: %s, Class: %c, Days Before Flight: %d, Total: %.2f SAR", passengerName,
 				ticketID, Character.toUpperCase(classType), daysBeforeFlight, calculateTicketPrice());
 	}
